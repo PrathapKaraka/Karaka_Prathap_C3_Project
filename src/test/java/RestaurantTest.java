@@ -43,6 +43,19 @@ class RestaurantTest {
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //Order Value
+    @Test
+    public void order_value_should_get_cumulative_total_when_collection_of_items_selected(){
+
+        restaurant.addToMenu("Coffee",100);
+        int orderValue;
+        List<String> selectedItemNames = Arrays.asList("Sweet corn soup", "Coffee" ) ;
+        orderValue = restaurant.getOrderValue(selectedItemNames) ;
+        assertEquals(219, orderValue);
+    }
+
+    //order value end
+
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
